@@ -25,11 +25,9 @@ keywords = ["mike brown", "possession"]
 replied_to = set()
 
 def log_exception(e, context):
-    """Log exceptions with context."""
     logging.error(f"Error in {context}: {e}")
 
 def reply_to_comments():
-    """Reply to new comments in the subreddit."""
     subreddit = reddit.subreddit(subreddit_name)
     logging.info(f"Monitoring comments in subreddit: r/{subreddit_name}")
 
@@ -47,7 +45,6 @@ def reply_to_comments():
             log_exception(e, "reply_to_comments")
 
 def reply_to_posts():
-    """Reply to new posts in the subreddit."""
     subreddit = reddit.subreddit(subreddit_name)
     logging.info(f"Monitoring posts in subreddit: r/{subreddit_name}")
 
